@@ -2,7 +2,7 @@
 
 En interaktiv webbapplikation för att lära sig viktiga begrepp från modern historia med förklaringar och översättningar till flera språk.
 
-## Funktioner
+## Funktioner 
 
 - **33 viktiga historiska begrepp** från modern tid (1900-talet och framåt)
 - **Flerspråkigt stöd** - översättningar till 8 språk:
