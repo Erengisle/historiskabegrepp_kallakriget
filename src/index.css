@@ -1,52 +1,104 @@
-import { useState } from "react";
-import { concepts } from "./data/concepts";
-import ConceptButton from "./components/ConceptButton";
-import ConceptDetail from "./components/ConceptDetail";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-export default function Index() {
-  const [selectedConcept, setSelectedConcept] = useState(concepts[0]);
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-2">
-            Moderna historiska begrepp
-          </h1>
-          <p className="text-muted-foreground text-lg">
-            Utforska viktiga händelser och fenomen från modern historia med förklaringar på flera språk
-          </p>
-        </div>
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-1">
-            <h2 className="text-xl font-semibold text-foreground mb-4">Begrepp</h2>
-            <div className="grid gap-2 max-h-[600px] overflow-y-auto pr-2">
-              {concepts.map((concept) => (
-                <ConceptButton
-                  key={concept.term}
-                  term={concept.term}
-                  isSelected={selectedConcept.term === concept.term}
-                  onClick={() => setSelectedConcept(concept)}
-                />
-              ))}
-            </div>
-          </div>
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
 
-          <div className="lg:col-span-2">
-            <div className="bg-card border border-border rounded-xl p-6 shadow-lg">
-              <ConceptDetail concept={selectedConcept} />
-            </div>
-          </div>
-        </div>
+.animate-in {
+  animation: animateIn 0.3s ease-in-out forwards;
+}
 
-        <footer className="text-center mt-8 text-sm text-muted-foreground">
-          <p>
-            Denna app hjälper dig att lära dig viktiga begrepp från modern historia.
-            Alla förklaringar inkluderar översättningar till flera språk.
-          </p>
-        </footer>
-      </div>
-    </div>
-  );
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.slide-in-from-bottom-2 {
+  transform: translateY(8px);
+  animation: slideInFromBottom 0.3s ease-in-out forwards;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
