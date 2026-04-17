@@ -1,6 +1,6 @@
 # Moderna historiska begrepp
 
-En interaktiv webbapplikation för att lära sig viktiga begrepp från modern historia med förklaringar och översättningar till flera språk.
+En interaktiv webbapplikation för att lära sig viktiga begrepp från modern historia med förklaringar och översättningar till flera språk. 
 
 ## Funktioner 
 
