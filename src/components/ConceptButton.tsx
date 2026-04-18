@@ -1,6 +1,7 @@
 import { cn } from "../lib/utils";
 
 interface ConceptButtonProps {
+  key?: string;  //
   term: string;
   isSelected: boolean;
   onClick: () => void;
