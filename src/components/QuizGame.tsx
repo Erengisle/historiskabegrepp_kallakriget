@@ -30,7 +30,7 @@ function getText(concept: Concept, lang: string): string {
 }
 
 interface Question {
-  term: string;
+  explanation: string;
   correct: string;
   options: string[];
 }
@@ -38,11 +38,11 @@ interface Question {
 function buildQuestions(lang: string): Question[] {
   const shuffled = shuffle([...concepts]);
   return shuffled.map((concept) => {
-    const correct = getText(concept, lang);
+    const explanation = getText(concept, lang);
     const distractors = shuffle(shuffled.filter((c) => c.term !== concept.term))
       .slice(0, 3)
-      .map((c) => getText(c, lang));
-    return { term: concept.term, correct, options: shuffle([correct, ...distractors]) };
+      .map((c) => c.term);
+    return { explanation, correct: concept.term, options: shuffle([concept.term, ...distractors]) };
   });
 }
 
@@ -189,19 +189,21 @@ export default function QuizGame({ onExit }: Props) {
         />
       </div>
 
-      {/* Term card */}
-      <div className="bg-card border border-border rounded-xl p-6 text-center shadow-sm">
+      {/* Explanation card */}
+      <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-          Välj rätt förklaring av
+          Vilket begrepp beskrivs här?
         </p>
-        <h2 className="text-3xl font-bold text-foreground">{q.term}</h2>
+        <p className="text-sm leading-relaxed text-foreground" dir={isRTL ? "rtl" : "ltr"}>
+          {q.explanation}
+        </p>
       </div>
 
       {/* Options */}
       <div className="flex flex-col gap-3">
         {q.options.map((option, i) => {
           let cls =
-            "w-full text-left border rounded-xl px-5 py-4 text-sm leading-relaxed transition-all duration-150 ";
+            "w-full text-left border rounded-xl px-5 py-4 text-sm font-medium transition-all duration-150 ";
           if (!answered) {
             cls += "bg-card border-border hover:border-primary/60 hover:bg-primary/5 cursor-pointer";
           } else if (option === q.correct) {
@@ -216,7 +218,6 @@ export default function QuizGame({ onExit }: Props) {
               key={i}
               onClick={() => pick(option)}
               className={cls}
-              dir={isRTL ? "rtl" : "ltr"}
             >
               {option}
             </button>
