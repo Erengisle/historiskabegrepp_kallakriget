@@ -15,7 +15,8 @@
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "allowJs": true
+    "allowJs": true,
+    "allowArbitraryExtensions": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
