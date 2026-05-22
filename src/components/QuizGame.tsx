@@ -29,6 +29,11 @@ function getText(concept: Concept, lang: string): string {
   return concept.translations.find((t) => t.language === lang)?.translation ?? concept.explanation;
 }
 
+function maskTerm(text: string, term: string): string {
+  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return text.replace(new RegExp(escaped, "gi"), "___");
+}
+
 interface Question {
   explanation: string;
   correct: string;
@@ -38,7 +43,7 @@ interface Question {
 function buildQuestions(lang: string): Question[] {
   const shuffled = shuffle([...concepts]);
   return shuffled.map((concept) => {
-    const explanation = getText(concept, lang);
+    const explanation = maskTerm(getText(concept, lang), concept.term);
     const distractors = shuffle(shuffled.filter((c) => c.term !== concept.term))
       .slice(0, 3)
       .map((c) => c.term);
