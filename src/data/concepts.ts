@@ -6,6 +6,7 @@ export interface ConceptTranslation {
 
 export interface Concept {
   term: string;
+  quizHint: string;
   explanation: string;
   translations: ConceptTranslation[];
 }
@@ -13,6 +14,7 @@ export interface Concept {
 export const concepts: Concept[] = [
   {
     term: "ANC",
+    quizHint: "Sydafrikas äldsta politiska parti, grundat 1912. Organisationen ledde kampen mot apartheid och Nelson Mandela var en av dess mest kända ledare. Partiet regerade Sydafrika efter apartheids fall 1994.",
     explanation: "ANC (African National Congress) är Sydafrikas äldsta politiska parti, grundat 1912. Organisationen ledde kampen mot apartheid och Nelson Mandela var en av dess mest kända ledare. ANC regerade Sydafrika efter apartheids fall 1994.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "ANC (Congreso Nacional Africano) es el partido político más antiguo de Sudáfrica, fundado en 1912. La organización lideró la lucha contra el apartheid y Nelson Mandela fue uno de sus líderes más conocidos." },
@@ -27,6 +29,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Apartheid",
+    quizHint: "Ett sydafrikanskt system av institutionaliserad rasåtskillnad som gällde 1948–1994. Systemet segregerade befolkningen i raser och gav den vita minoriteten politisk och ekonomisk kontroll. Det internationella samfundet införde sanktioner som bidrog till systemets fall.",
     explanation: "Apartheid var Sydafrikas system av institutionaliserad rasåtskillnad som gällde 1948-1994. Systemet segregerade befolkningen i raser och gav vita minoriteten politisk och ekonomisk kontroll. Det internationella samfundet införde sanktioner som bidrog till systemets fall.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Apartheid fue el sistema de segregación racial institucionalizada de Sudáfrica vigente de 1948 a 1994. El sistema segregó a la población por razas y otorgó control político y económico a la minoría blanca." },
@@ -41,6 +44,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Balfour-deklarationen",
+    quizHint: "En brittisk utrikespolitisk deklaration från 1917 som uttryckte stöd för upprättandet av ett judiskt hem i Palestina. Dokumentet utfärdades av en brittisk utrikesminister och blev en grundsten för den sionistiska rörelsen och skapandet av Israel.",
     explanation: "Balfour-deklarationen från 1917 var ett brev från den brittiske utrikesministern Arthur Balfour som uttryckte stöd för upprättandet av ett judiskt hem i Palestina. Deklarationen blev en grundsten för den senare sionistiska rörelsen och skapandet av Israel.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La Declaración Balfour de 1917 fue una carta del ministro de Relaciones Exteriores británico Arthur Balfour que expresaba apoyo para el establecimiento de un hogar judío en Palestina." },
@@ -55,6 +59,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Bosättare",
+    quizHint: "Personer som etablerar sig permanent i ett område, ofta genom att bygga samhällen på mark som tidigare var obebodd eller kontrollerad av andra grupper. Termen används särskilt om israeliska samhällen på Västbanken och i Gaza (fram till 2005).",
     explanation: "Bosättare är personer som etablerar sig permanent i ett område, ofta genom att bygga samhällen på mark som tidigare var obebodd eller kontrollerad av andra grupper. Termen används särskilt om israeliska bosättningar på Västbanken och i Gaza (fram till 2005).",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Los colonos son personas que se establecen permanentemente en un área, a menudo construyendo comunidades en tierras previamente deshabitadas o controladas por otros grupos." },
@@ -69,6 +74,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Arabiska våren",
+    quizHint: "En serie protester och revolutioner som svepte över Nordafrika och Mellanöstern 2010–2012. Rörelserna krävde demokratiska reformer och störtade flera diktatorer, men ledde också till instabilitet och krig i länder som Syrien och Libyen.",
     explanation: "Arabiska våren var en serie protester och revolutioner som svepte över Nordafrika och Mellanöstern 2010-2012. Rörelserna krävde demokratiska reformer och störtade flera diktatorer, men ledde också till instabilitet och krig i flera länder som Syrien och Libyen.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La Primavera Árabe fue una serie de protestas y revoluciones que barrieron el norte de África y Oriente Medio en 2010-2012, exigiendo reformas democráticas y derrocando varios dictadores." },
@@ -83,6 +89,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Det stora språnget",
+    quizHint: "En kinesisk ekonomisk kampanj 1958–1962 för att snabbt industrialisera landet genom massproduktion av stål och kollektivisering av jordbruket. Kampanjen misslyckades katastrofalt och ledde till en svältkatastrof som kostade tiotals miljoner liv.",
     explanation: "Det stora språnget (1958-1962) var Mao Zedongs ekonomiska kampanj för att snabbt industrialisera Kina genom massproduktion av stål och jordbruk i folkkommuner. Kampanjen misslyckades katastrofalt och ledde till en svältkatastrof som kostade miljontals liv.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "El Gran Salto Adelante (1958-1962) fue la campaña económica de Mao Zedong para industrializar rápidamente China. La campaña falló catastróficamente y llevó a una hambruna que costó millones de vidas." },
@@ -97,6 +104,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Dominoteorin",
+    quizHint: "En geopolitisk teori under kalla kriget som hävdade att om ett land föll för kommunismen, skulle grannländerna också falla i följd. Teorin användes för att motivera amerikansk militär intervention i bland annat Vietnam.",
     explanation: "Dominoteorin var en geopolitisk teori under kalla kriget som hävdade att om ett land föll för kommunismen, skulle grannländerna också falla som dominobrickor. Teorin användes för att motivera amerikansk militär intervention i Vietnam, Laos och Kambodja.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La teoría del dominó era una teoría geopolítica de la Guerra Fría que sostenía que si un país caía al comunismo, los países vecinos también caerían como fichas de dominó." },
@@ -111,6 +119,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Drogkartell",
+    quizHint: "Kriminella organisationer som kontrollerar produktion, smuggling och distribution av illegala droger. De är särskilt mäktiga i Latinamerika, där sådana grupper i Colombia och Mexiko har utmanat statlig auktoritet genom våld och korruption.",
     explanation: "Drogkarteller är kriminella organisationer som kontrollerar produktion, smuggling och distribution av illegala droger. De är särskilt mäktiga i Latinamerika, där karteller som Medellín- och Cali-kartellerna i Colombia har utmanat statlig auktoritet genom våld och korruption.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Los cárteles de drogas son organizaciones criminales que controlan la producción, contrabando y distribución de drogas ilegales. Son particularmente poderosos en Latinoamérica." },
@@ -125,6 +134,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "FNL",
+    quizHint: "En algerisk befrielserörelse som ledde kampen för Algeriets självständighet från Frankrike 1954–1962. Organisationen använde gerillataktik och terrorism för att tvinga fram politiska förändringar och blev senare Algeriets styrande parti.",
     explanation: "FNL (Front National de Libération) var den algeriska befrielserörelsen som ledde kampen för Algeriets självständighet från Frankrike 1954-1962. Organisationen använde gerillataktik och terrorism för att tvinga fram politiska förändringar och blev senare Algeriets styrande parti.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "FLN (Frente de Liberación Nacional) fue el movimiento de liberación argelino que lideró la lucha por la independencia de Argelia de Francia entre 1954-1962." },
@@ -139,6 +149,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Grisbukts-invasionen",
+    quizHint: "Ett misslyckat militärt försök i april 1961 av CIA-utbildade kubanska exiler att störta Fidel Castros kommunistregim. Operationen slutade i fiasko och stärkte Castros position, samt fördjupade spänningarna mellan Kuba och USA.",
     explanation: "Grisbukts-invasionen (april 1961) var ett misslyckat försök av CIA-utbildade kubanska exiler att störta Fidel Castros kommunistregim. Invasionen vid Grisbukten (Bahía de Cochinos) slutade i fiasko och stärkte Castros position samt fördjupade de kubansk-amerikanska spänningarna.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La invasión de Bahía de Cochinos (abril 1961) fue un intento fallido de exiliados cubanos entrenados por la CIA para derrocar el régimen comunista de Fidel Castro." },
@@ -153,6 +164,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Guantánamo",
+    quizHint: "En amerikansk militärbas på Kuba som sedan 2002 huserar ett kontroversiellt fångläger för misstänkta terrorister. Lägret har kritiserats internationellt för tortyr, obestämda fängelsetider och brott mot mänskliga rättigheter.",
     explanation: "Guantánamo Bay är en amerikansk militärbas på Kuba som sedan 2002 huserat ett kontroversiellt fångläger för misstänkta terrorister. Lägret har kritiserats internationellt för tortyr, obestämda fängelsetider och brott mot mänskliga rättigheter.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Bahía de Guantánamo es una base militar estadounidense en Cuba que desde 2002 alberga una controvertida prisión para presuntos terroristas, criticada por tortura y violaciones de derechos humanos." },
@@ -167,6 +179,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Hamas",
+    quizHint: "En palestinsk islamistisk organisation grundad 1987 som kontrollerar Gazaremsan. Gruppen har både en politisk gren och en militär gren och betraktas som en terrororganisation av USA, EU och Israel.",
     explanation: "Hamas (Harakat al-Muqawama al-Islamiyya) är en palestinsk islamistisk organisation grundad 1987. Gruppen kontrollerar Gazaremsan och har både en politisk gren och en militär gren. Hamas betraktas som en terrororganisation av USA, EU och Israel.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Hamas es una organización islamista palestina fundada en 1987. El grupo controla la Franja de Gaza y tiene tanto un ala política como militar. Hamas es considerado una organización terrorista por EE.UU., UE e Israel." },
@@ -181,6 +194,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Heta linjen",
+    quizHint: "En direkt kommunikationslänk mellan USA:s och Sovjetunionens ledare, etablerad 1963 efter en kris som nästan lett till kärnvapenkrig. Länken skulle möjliggöra snabb kommunikation under kriser och minska risken för missförstånd och eskalering.",
     explanation: "Heta linjen var en direkt kommunikationslänk mellan USA:s och Sovjetunionens ledare under kalla kriget, etablerad 1963 efter Kubakrisen. Linjen skulle förhindra kärnvapenkrig genom att möjliggöra snabb kommunikation under kriser och minska risken för missförstånd.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La línea roja era un enlace directo de comunicación entre los líderes de EE.UU. y la Unión Soviética durante la Guerra Fría, establecido en 1963 tras la Crisis de los Misiles de Cuba." },
@@ -195,6 +209,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Hippier",
+    quizHint: "Anhängare av en kontrakulturell ungdomsrörelse som uppstod i USA på 1960-talet och spred sig globalt. Rörelsen förespråkade fred, kärlek och en alternativ livsstil i protest mot Vietnamkriget och det etablerade samhället.",
     explanation: "Hippierörelsen var en kontrakulturell ungdomsrörelse som uppstod i USA på 1960-talet och spred sig globalt. Hippies förespråkade fred, kärlek, musikfestivaler som Woodstock, psykedeliska droger och en alternativ livsstil i protest mot Vietnamkriget och etablissemanget.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "El movimiento hippie fue un movimiento juvenil contracultural que surgió en EE.UU. en los años 60. Los hippies abogaban por la paz, el amor y un estilo de vida alternativo en protesta contra la Guerra de Vietnam." },
@@ -209,6 +224,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Hutuer",
+    quizHint: "En etnisk grupp i Rwanda och Burundi som utgör majoriteten av befolkningen. Under ett folkmord 1994 genomförde extremister från gruppen systematisk massmord på landets minoritet och moderata meningsfränder, med över 800 000 döda på hundra dagar.",
     explanation: "Hutuer är en etnisk grupp i Rwanda och Burundi som utgör majoriteten av befolkningen (cirka 84% i Rwanda). Under Rwandas folkmord 1994 genomförde hutuextremister systematisk massmord på tutsier och moderata hutuer, vilket resulterade i över 800 000 döda.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Los hutus son un grupo étnico en Ruanda y Burundi que constituye la mayoría de la población. Durante el genocidio de Ruanda de 1994, extremistas hutus cometieron asesinatos sistemáticos de tutsis." },
@@ -223,6 +239,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Intifada",
+    quizHint: "Arabiskt ord för uppstand, som syftar på två palestinska uppror mot israelisk ockupation. Det första (1987–1993) präglades av stenkastning och civil olydnad, medan det andra (2000–2005) innehöll mer våld inklusive självmordsbomber.",
     explanation: "Intifada betyder 'uppstand' på arabiska och syftar på två palestinska uppror mot israelisk ockupation. Första intifadan (1987-1993) präglades av stenkastning och civil olydnad, medan andra intifadan (2000-2005) innehöll mer våld och självmordsbomber.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Intifada significa 'levantamiento' en árabe y se refiere a dos revueltas palestinas contra la ocupación israelí. La Primera Intifada (1987-1993) se caracterizó por lanzamiento de piedras y desobediencia civil." },
@@ -237,6 +254,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Kulturrevolutionen",
+    quizHint: "En kinesisk politisk kampanj 1966–1976 för att bevara kommunistisk ideologi genom att 'rensa' traditionella kulturella element. Kampanjen ledde till våldsamheter, förföljelse av intellektuella och massivt kulturellt förfall med miljontals offer.",
     explanation: "Kulturrevolutionen (1966-1976) var Mao Zedongs politiska kampanj i Kina för att bevara kommunistisk ideologi genom att 'rensa' traditionella kulturella element. Kampanjen ledde till våldsamheter, förföljelse av intellektuella och massivt kulturellt förfall med miljontals offer.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La Revolución Cultural (1966-1976) fue la campaña política de Mao Zedong en China para preservar la ideología comunista 'purificando' elementos culturales tradicionales. Llevó a violencia, persecución y millones de víctimas." },
@@ -251,6 +269,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Massakern på Himmelska fridens torg",
+    quizHint: "En händelse den 4 juni 1989 när kinesisk militär våldsamt slog ned studentprotester i Peking. Hundratals eller tusentals demonstranter dödades när regeringen använde militärt våld mot den demokratiska rörelsen. Händelsen censureras starkt i Kina än i dag.",
     explanation: "Massakern på Himmelska fridens torg ägde rum den 4 juni 1989 när kinesisk militär våldsamt slog ned studentprotester i Peking. Hundratals eller tusentals demonstranter dödades när regeringen använde våld för att stoppa den demokratiska rörelsen. Händelsen censureras starkt i Kina.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La Masacre de la Plaza de Tiananmen ocurrió el 4 de junio de 1989 cuando el ejército chino reprimió violentamente las protestas estudiantiles en Pekín. Cientos o miles de manifestantes murieron cuando el gobierno usó fuerza." },
@@ -265,6 +284,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Mau-Mau-upproret",
+    quizHint: "En väpnad revolt 1952–1960 av folkgrupper i Kenya mot brittisk kolonialstyre. Upproret ledde till brutal brittisk repression men bidrog slutligen till Kenyas självständighet 1963.",
     explanation: "Mau-Mau-upproret (1952-1960) var en väpnad revolt av kikuyufolket och andra afrikanska grupper mot brittisk kolonialstyre i Kenya. Upproret ledde till brutal repression från britterna men bidrog slutligen till Kenyas självständighet 1963.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "La rebelión Mau Mau (1952-1960) fue una revuelta armada del pueblo kikuyu y otros grupos africanos contra el dominio colonial británico en Kenia, contribuyendo finalmente a la independencia de Kenia en 1963." },
@@ -279,6 +299,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Medborgarrättsrörelsen",
+    quizHint: "En social rörelse i USA under 1950–1960-talen som kämpade för att avskaffa rasåtskillnad och diskriminering mot afroamerikaner. Ledare som Martin Luther King Jr. och Rosa Parks använde civil olydnad och fredliga protester för att uppnå lika rättigheter.",
     explanation: "Medborgarrättsrörelsen i USA (1950-1960-talen) var en social rörelse som kämpade för att avskaffa rasåtskillnad och diskriminering mot afroamerikaner. Ledare som Martin Luther King Jr. och Rosa Parks använde civil olydnad och fredliga protester för att uppnå lika rättigheter.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "El Movimiento por los Derechos Civiles en EE.UU. (1950s-1960s) fue un movimiento social que luchó para abolir la segregación racial y la discriminación contra los afroamericanos, liderado por figuras como Martin Luther King Jr." },
@@ -293,6 +314,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Mujaheddin",
+    quizHint: "Islamiska krigare som kämpar för religiösa mål. Termen används särskilt om afghanska grupper som kämpade mot sovjetisk ockupation 1979–1989 med ekonomiskt och militärt stöd från USA, Pakistan och Saudiarabien.",
     explanation: "Mujaheddin betyder 'de som för heligt krig' och syftar på islamiska krigare som kämpar för religiösa mål. Termen användes särskilt om afghanska grupper som kämpade mot sovjetisk ockupation (1979-1989) med stöd från USA, Pakistan och Saudiarabien.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Mujahiddin significa 'los que luchan en guerra santa' y se refiere a guerreros islámicos que luchan por objetivos religiosos, especialmente grupos afganos que lucharon contra la ocupación soviética (1979-1989)." },
@@ -307,6 +329,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Napalm",
+    quizHint: "En brandfarlig gelsubstans som användes som vapen under Vietnamkriget och andra konflikter. Det orsakar svåra brännskador och blev en symbol för krigets grymhet efter att bilder på drabbade civila, särskilt barn, spreds världen över.",
     explanation: "Napalm är en brandfarlig gelsubstans som användes som vapen under Vietnamkriget och andra konflikter. Det orsakar svåra brännskador och blev en symbol för krigets grymhet efter att bilder på napalmskadade civila, särskilt barn, visades världen över.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Napalm es una sustancia gelatinosa incendiaria utilizada como arma durante la Guerra de Vietnam y otros conflictos. Causa quemaduras graves y se convirtió en símbolo de la crueldad de la guerra." },
@@ -321,6 +344,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Pentagon",
+    quizHint: "USA:s försvarsdepartements byggnad i delstaten Virginia som fungerar som centrum för landets militära kommando. Byggnaden attackerades av terrorister den 11 september 2001 och är en av världens största kontorsbyggnader.",
     explanation: "Pentagon är den femkantiga byggnaden i Virginia som huserar USA:s försvarsdepartement och fungerar som centrum för amerikansk militär kommando. Byggnaden blev en symbol för amerikansk militärmakt och attackerades av terrorister den 11 september 2001.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "El Pentágono es el edificio pentagonal en Virginia que alberga el Departamento de Defensa de EE.UU. y funciona como centro del comando militar estadounidense. Fue atacado por terroristas el 11 de septiembre de 2001." },
@@ -335,6 +359,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "PLO",
+    quizHint: "En paraplyorganisation för palestinska befrielsegrupper, grundad 1964. Under en känd ledares styrning blev den den internationellt erkända representanten för det palestinska folket, trots att vissa medlemsgrupper använde terroristmetoder.",
     explanation: "PLO (Palestine Liberation Organization) grundades 1964 som paraplyorganisation för palestinska befrielsegrupper. Under Yasser Arafats ledning blev PLO den internationellt erkända representanten för det palestinska folket, även om vissa medlemsgrupper använde terroristmetoder.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "OLP (Organización para la Liberación de Palestina) fue fundada en 1964 como organización paraguas para grupos de liberación palestinos. Bajo el liderazgo de Yasser Arafat se convirtió en el representante reconocido del pueblo palestino." },
@@ -349,6 +374,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Röda brigaderna",
+    quizHint: "En italiensk vänsterextremistisk terrororganisation aktiv på 1970–1990-talen. Gruppen genomförde kidnappningar, mord och bombattacker mot politiker, domare och företagsledare i ett försök att störta den italienska staten.",
     explanation: "Röda brigaderna var en italiensk vänsterextremistisk terrororganisation aktiv 1970-1990-talen. Gruppen genomförde kidnappningar, mord och bombattacker mot politiker, domare och företagsledare i ett försök att störta den italienska staten och skapa en marxistisk revolution.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Las Brigadas Rojas fueron una organización terrorista de extrema izquierda italiana activa en los años 1970-1990. El grupo llevó a cabo secuestros, asesinatos y atentados con bombas contra políticos, jueces y líderes empresariales." },
@@ -363,6 +389,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Röda khmererna",
+    quizHint: "En kommunistisk gerillarörelse som styrde Kambodja 1975–1979 under en brutal ledare. Regimen genomförde ett av historiens värsta folkmord, där upp till 2 miljoner människor dödades genom avrättningar, svält och tvångsarbete.",
     explanation: "Röda khmererna var en kommunistisk gerillagrupp som styrde Kambodja 1975-1979 under Pol Pots ledning. Regimen genomförde ett av historiens värsta folkmord, där upp till 2 miljoner människor dödades genom avrättningar, svält och tvångsarbete.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Los Jemeres Rojos fueron un grupo guerrillero comunista que gobernó Camboya de 1975-1979 bajo el liderazgo de Pol Pot. El régimen perpetró uno de los peores genocidios de la historia, matando hasta 2 millones de personas." },
@@ -377,6 +404,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Talibaner",
+    quizHint: "En islamistisk rörelse som uppstod i Afghanistan på 1990-talet och har styrt landet vid två tillfällen. Gruppen följer en extrem tolkning av islamisk lag, har kraftigt begränsat kvinnors rättigheter och gett skydd åt terrororganisationer.",
     explanation: "Talibaner är en islamistisk rörelse som uppstod i Afghanistan på 1990-talet och styrt landet 1996-2001 och från 2021. Gruppen följer en extrem tolkning av islamisk lag (sharia) och har begränsat kvinnors rättigheter kraftigt samt gett skydd åt terrororganisationer som al-Qaida.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Los talibanes son un movimiento islamista que surgió en Afganistán en los años 90 y gobernó el país de 1996-2001 y desde 2021. El grupo sigue una interpretación extrema de la ley islámica y ha restringido severamente los derechos de las mujeres." },
@@ -391,6 +419,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Teokrati",
+    quizHint: "En regeringsform där religiösa ledare styr och religiösa lagar utgör grunden för statens lagstiftning. Moderna exempel finns i Mellanöstern, där präster eller religiösa ledare i vissa stater har den absoluta politiska makten.",
     explanation: "En teokrati är en regeringsform där religiösa ledare styr och religiösa lagar utgör grunden för statens lagstiftning. Moderna exempel inkluderar Iran efter 1979 års islamiska revolution, där ayatollor har den högsta makten, och Vatikanstaten under påvens styre.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Una teocracia es una forma de gobierno donde los líderes religiosos gobiernan y las leyes religiosas forman la base de la legislación estatal. Ejemplos modernos incluyen Irán después de la revolución islámica de 1979." },
@@ -405,6 +434,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Tiger-ekonomier",
+    quizHint: "En term för de snabbväxande asiatiska ekonomierna från 1960-talet framåt. Dessa länder upplevde extraordinär ekonomisk tillväxt genom exportorienterad industrialisering och betraktas som förebilder för ekonomisk utveckling i omvärlden.",
     explanation: "Tiger-ekonomier är en term för de snabbväxande asiatiska ekonomierna från 1960-talet framåt, särskilt Sydkorea, Taiwan, Hongkong och Singapore. Dessa länder upplevde extraordinär ekonomisk tillväxt genom exportorienterad industrialisering och blev modeller för ekonomisk utveckling.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Las economías tigre se refieren a las economías asiáticas de rápido crecimiento desde los años 60, especialmente Corea del Sur, Taiwán, Hong Kong y Singapur. Experimentaron crecimiento extraordinario a través de la industrialización orientada a la exportación." },
@@ -419,6 +449,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Tonkinbukts-intermezzot",
+    quizHint: "En påstådd attack i augusti 1964 mot amerikanska krigsskepp i Sydostasien, som senare visade sig vara överdrivet eller fabricerat. Händelsen gav den amerikanska presidenten kongressens tillstånd att kraftigt eskalera det militära engagemanget i Vietnam.",
     explanation: "Tonkinbukts-intermezzot (augusti 1964) var en påstådd attack av nordvietnamesiska fartyg mot amerikanska krigsskepp i Tonkinbukten. Händelsen, som senare visade sig vara överdrivet eller fabricerat, gav president Johnson lov från kongressen att eskalera Vietnamkriget kraftigt.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "El Incidente del Golfo de Tonkín (agosto 1964) fue un supuesto ataque de barcos norvietnamitas contra buques de guerra estadounidenses. El incidente, que luego resultó ser exagerado o fabricado, dio al presidente Johnson autorización del Congreso para escalar la Guerra de Vietnam." },
@@ -433,6 +464,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Tutsier",
+    quizHint: "En etnisk minoritetsgrupp i Rwanda och Burundi som traditionellt var boskapsskötare. Under ett folkmord 1994 dödades över 800 000 av gruppens medlemmar och deras allierade systematiskt på bara hundra dagar — ett av historiens snabbaste folkmord.",
     explanation: "Tutsier är en etnisk minoritet i Rwanda och Burundi som traditionellt varit boskapsskötare. Under Rwandas folkmord 1994 blev över 800 000 tutsier och moderata hutuer systematiskt mördade av hutuextremister på bara 100 dagar, vilket utgör ett av historiens snabbaste folkmord.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "Los tutsis son una minoría étnica en Ruanda y Burundi tradicionalmente pastores de ganado. Durante el genocidio de Ruanda de 1994, más de 800,000 tutsis y hutus moderados fueron asesinados sistemáticamente por extremistas hutus." },
@@ -447,6 +479,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "Watergate-affären",
+    quizHint: "En politisk skandal 1972–1974 som började med ett inbrott på ett politiskt partis huvudkontor i Washington D.C. Utredningen avslöjade att den sittande presidenten och hans administration försökt dölja sin inblandning, vilket ledde till att presidenten avgick.",
     explanation: "Watergate-affären (1972-1974) började med ett inbrott på Demokratiska partiets högkvarter i Watergate-komplexet i Washington. Utredningen avslöjade att president Richard Nixon och hans administration varit inblandade i täckoperationen, vilket ledde till Nixons avgång 1974.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "El escándalo Watergate (1972-1974) comenzó con un robo en la sede del Partido Demócrata en el complejo Watergate en Washington. La investigación reveló que el presidente Richard Nixon había estado involucrado en el encubrimiento, llevando a su renuncia en 1974." },
@@ -461,6 +494,7 @@ export const concepts: Concept[] = [
   },
   {
     term: "World Trade Center",
+    quizHint: "Ett skyskrapekomplex i New York som symboliserade amerikansk ekonomisk makt. Byggnadernas torn förstördes i terrorattackerna den 11 september 2001 när kapade flygplan flögs in i dem, vilket dödade nästan 3 000 personer och startade kriget mot terrorismen.",
     explanation: "World Trade Center var ett skrapskrapskomplex i New York som symboliserade amerikansk ekonomisk makt. Tvillingtornen förstördes i terrorattackerna den 11 september 2001 när al-Qaida kapade fyra flygplan, vilket dödade nästan 3 000 personer och startade kriget mot terrorismen.",
     translations: [
       { language: "Spanska", flag: "🇪🇸", translation: "El World Trade Center era un complejo de rascacielos en Nueva York que simbolizaba el poder económico estadounidense. Las Torres Gemelas fueron destruidas en los ataques terroristas del 11 de septiembre de 2001, matando a casi 3,000 personas." },
