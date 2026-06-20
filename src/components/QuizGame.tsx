@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { concepts } from "../data/concepts";
+import type { Concept } from "../data/sets";
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -16,7 +16,7 @@ interface Question {
   options: string[];
 }
 
-function buildQuestions(): Question[] {
+function buildQuestions(concepts: Concept[]): Question[] {
   const shuffled = shuffle([...concepts]);
   return shuffled.map((concept) => {
     const distractors = shuffle(shuffled.filter((c) => c.term !== concept.term))
@@ -33,12 +33,13 @@ function buildQuestions(): Question[] {
 type Phase = "playing" | "finished";
 
 interface Props {
+  concepts: Concept[];
   onExit: () => void;
 }
 
-export default function QuizGame({ onExit }: Props) {
+export default function QuizGame({ concepts, onExit }: Props) {
   const [phase, setPhase] = useState<Phase>("playing");
-  const [questions, setQuestions] = useState<Question[]>(buildQuestions);
+  const [questions, setQuestions] = useState<Question[]>(() => buildQuestions(concepts));
   const [index, setIndex] = useState(0);
   const [chosen, setChosen] = useState<string | null>(null);
   const [score, setScore] = useState(0);
@@ -48,7 +49,7 @@ export default function QuizGame({ onExit }: Props) {
   const answered = chosen !== null;
 
   function restart() {
-    setQuestions(buildQuestions());
+    setQuestions(buildQuestions(concepts));
     setIndex(0);
     setChosen(null);
     setScore(0);

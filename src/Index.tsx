@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { concepts } from "./data/concepts";
+import { sets, type ConceptSet, type Concept } from "./data/sets";
 import ConceptButton from "./components/ConceptButton";
 import ConceptDetail from "./components/ConceptDetail";
 import QuizGame from "./components/QuizGame";
@@ -7,16 +7,61 @@ import QuizGame from "./components/QuizGame";
 type Mode = "study" | "quiz";
 
 export default function Index() {
-  const [selectedConcept, setSelectedConcept] = useState(concepts[0]);
+  const [selectedSet, setSelectedSet] = useState<ConceptSet | null>(null);
+  const [selectedConcept, setSelectedConcept] = useState<Concept | null>(null);
   const [mode, setMode] = useState<Mode>("study");
 
+  function selectSet(set: ConceptSet) {
+    setSelectedSet(set);
+    setSelectedConcept(set.concepts[0]);
+    setMode("study");
+  }
+
+  // ── Set selector ───────────────────────────────────────────────────────
+  if (!selectedSet) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center mb-10">
+            <h1 className="text-4xl font-bold text-foreground mb-2">
+              Moderna historiska begrepp
+            </h1>
+            <p className="text-muted-foreground text-lg">Välj ett begreppsset att träna på</p>
+          </div>
+          <div className="grid gap-4 max-w-lg mx-auto">
+            {sets.map((set) => (
+              <button
+                key={set.id}
+                onClick={() => selectSet(set)}
+                className="bg-card border border-border rounded-xl p-6 text-left hover:border-primary hover:bg-primary/5 transition-all"
+              >
+                <div className="font-semibold text-foreground text-lg">{set.label}</div>
+                {set.description && (
+                  <div className="text-sm text-muted-foreground mt-1">{set.description}</div>
+                )}
+                <div className="text-xs text-muted-foreground mt-3">
+                  {set.concepts.length} begrepp
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Study / Quiz ───────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-2">
-            Moderna historiska begrepp
-          </h1>
+          <button
+            onClick={() => setSelectedSet(null)}
+            className="text-sm text-muted-foreground hover:text-foreground mb-3 inline-block transition-colors"
+          >
+            ← Byt set
+          </button>
+          <h1 className="text-4xl font-bold text-foreground mb-2">{selectedSet.label}</h1>
           <p className="text-muted-foreground text-lg">
             Utforska viktiga händelser och fenomen från modern historia med förklaringar på flera språk
           </p>
@@ -46,17 +91,17 @@ export default function Index() {
         </div>
 
         {mode === "quiz" ? (
-          <QuizGame onExit={() => setMode("study")} />
+          <QuizGame concepts={selectedSet.concepts} onExit={() => setMode("study")} />
         ) : (
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-1">
               <h2 className="text-xl font-semibold text-foreground mb-4">Begrepp</h2>
               <div className="grid gap-2 max-h-[600px] overflow-y-auto pr-2">
-                {concepts.map((concept) => (
+                {selectedSet.concepts.map((concept) => (
                   <ConceptButton
                     key={concept.term}
                     term={concept.term}
-                    isSelected={selectedConcept.term === concept.term}
+                    isSelected={selectedConcept?.term === concept.term}
                     onClick={() => setSelectedConcept(concept)}
                   />
                 ))}
@@ -65,7 +110,7 @@ export default function Index() {
 
             <div className="lg:col-span-2">
               <div className="bg-card border border-border rounded-xl p-6 shadow-lg">
-                <ConceptDetail concept={selectedConcept} />
+                {selectedConcept && <ConceptDetail concept={selectedConcept} />}
               </div>
             </div>
           </div>
